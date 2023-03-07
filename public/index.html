@@ -39,13 +39,39 @@
     href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900"
     rel="stylesheet"
   />
-  <title>A React Landing Page Template</title>
+  <link
+    href="https://cdn.jsdelivr.net/gh/aalka061/geniech@main/genieChat.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <title>Lifecycle Counselling - Transformative Psychotherapy</title>
   <meta name="description" content="" />
-  <meta name="author" content="@Issaafalkattan" />
+  <meta name="author" content="@alkafabd" />
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/aalka061/geniech@main/genieChat.js"
+  ></script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
   <div id="root"></div>
+  <div id="chat-bot"></div>
   <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      let chat = new GenieChatBot({
+        elementId: "chat-bot",
+        chatBackgroundColor: "#acbee7",
+        chatTitle: "Chat with our AI",
+      });
+    });
+  </script>
 </body>

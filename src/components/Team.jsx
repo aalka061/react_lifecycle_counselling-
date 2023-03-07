@@ -7,8 +7,9 @@ export const Team = (props) => {
         <div className="col-md-8 col-md-offset-2 section-title">
           <h2>Meet the Team</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+            Family therapy offers solutions to manage conflicts, improve
+            communication, and overcome struggles, with expertise in areas such
+            as parenting and behavioral issues
           </p>
         </div>
         <div id="row">
