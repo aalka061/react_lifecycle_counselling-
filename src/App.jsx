@@ -18,7 +18,25 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 const App = () => {
+  const [width, setWindowWidth] = useState(0);
   const [landingPageData, setLandingPageData] = useState({});
+
+  // componentDidMount...runs only once
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
+
+  const responsive = {
+    showTopNavMenu: width > 1023,
+  };
+
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
