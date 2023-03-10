@@ -5,7 +5,7 @@ function GenieChatBot(options) {
     chatBackgroundColor: "#5297ff",
     chatTextColor: "white",
     chatIconColor: "#fff",
-    resource_url: "/api/home_chatbot/",
+    resource_url: "/api/basic_cbt/",
     base_url: "",
     client_token: "",
   };
@@ -206,19 +206,18 @@ function GenieChatBot(options) {
 
   this.getBotResponse = async function (input) {
     const url = options.base_url + options.resource_url;
-    console.log(url);
-    console.log(options.client_token);
+    const params = {
+      token: options.client_token,
+      prompt: input,
+    };
     // url: http://gptbot-dev.ca-central-1.elasticbeanstalk.com/api/home_chatbot/
     try {
-      const response = await fetch(`${url}`, {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-type": "application/x-www-form-urlencoded",
         },
-        body: {
-          prompt: input,
-          token: options.client_token,
-        },
+        body: JSON.stringify(params),
       });
       const data = await response;
       clearInterval(loadInterval);
